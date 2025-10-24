@@ -36,7 +36,7 @@ export const InputComponent = ({
           </button>
         )}
         {img && <img src={img} alt="icon" />}
-        <input type={inputType} placeholder={message}/>
+        <input type={inputType} placeholder={message} />
       </div>
     </div>
   );
