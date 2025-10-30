@@ -1,9 +1,9 @@
 import styles from "./Login.module.css";
 import { InputComponent } from "../../../Components/UI/Input/index";
-import atSign from "../../../Assets/at-sign.svg";
 import { ButtonComponent } from "../../../Components/UI/Button";
-import icon from "../../../Assets/icon.svg";
 import { LinkComponent } from "../../../Components/UI/Link";
+import icon from "../../../Assets/icon.svg";
+import atSign from "../../../Assets/at-sign.svg";
 
 
 const Login = () => {
