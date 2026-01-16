@@ -10,25 +10,45 @@
 
 .container .section_1,
 .container .section_2 {
-  transition: transform 550ms ease-in-out, opacity 550ms ease-in-out;
+  will-change: transform, opacity;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-110%);
+    opacity: 1;
+    width: 120vh;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(170%);
+    opacity: 1;
+    width: 120vh;
+  }
 }
 
 .container:global(.slide-left) .section_1 {
-  transform: translateX(-100%);
-  opacity: 0.98;
+  animation: slideOutLeft 1.3s cubic-bezier(0.45, 0, 0.2, 1) forwards;
 }
 .container:global(.slide-left) .section_2 {
-  transform: translateX(100%);
-  opacity: 0.98;
+  animation: slideOutRight 1.3s cubic-bezier(0.45, 0, 0.2, 1) forwards;
 }
 
 .container:global(.slide-right) .section_1 {
-  transform: translateX(100%);
-  opacity: 0.98;
+  animation: slideOutRight 1.3s cubic-bezier(0.45, 0, 0.2, 1) forwards;
 }
 .container:global(.slide-right) .section_2 {
-  transform: translateX(-100%);
-  opacity: 0.98;
+  animation: slideOutLeft 1.3s cubic-bezier(0.45, 0, 0.2, 1) forwards;
 }
 
 .section_1 {
@@ -59,17 +79,35 @@
   width: 115vh;
   height: 100vh;
 }
+
+.container .form,
+.container .form {
+  will-change: transform, opacity;
+}
 .form {
   width: 25rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-transform: capitalize;
-
   color: #353535;
-  /*background-color: blue;*/
+  transform-origin: top center;
+  overflow: hidden;
+}
+
+@keyframes formDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container:global(.slide-right) .form,
+.container:global(.slide-left) .form {
+  animation: formDown 600ms cubic-bezier(0.9, 1, 0.9, 1) reverse;
 }
 
 .form h1,

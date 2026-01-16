@@ -3,14 +3,14 @@ import { InputComponent } from "../../../Components/UI/Input/index";
 import atSign from "../../../Assets/at-sign.svg";
 import { ButtonComponent } from "../../../Components/UI/Button";
 import icon from "../../../Assets/icon.svg";
-import user from "../../../Assets/user.svg"
+import user from "../../../Assets/user.svg";
 import { LinkComponent } from "../../../Components/UI/Link";
 
 const Signup = () => {
   return (
     <>
       <div className={styles.background} />
-  <div className={styles.container} id="auth-container">
+      <div className={styles.container} id="auth-container">
         <div className={styles.section_1}></div>
         <div className={styles.section_2}>
           <div className={styles.form}>
@@ -38,7 +38,11 @@ const Signup = () => {
             />
             <ButtonComponent label="Iniciar Sesion" />
           </div>
-          <LinkComponent linkText="/login" message="¿No tienes una cuenta?" label="Inicia Sesion"/>
+          <LinkComponent
+            linkText="/login"
+            message="¿No tienes una cuenta?"
+            label="Inicia Sesion"
+          />
         </div>
       </div>
     </>
